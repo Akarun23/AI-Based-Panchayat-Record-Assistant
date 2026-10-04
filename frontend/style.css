@@ -1,0 +1,268 @@
+:root {
+    font-family: Inter, Arial, sans-serif;
+    color: #172033;
+    background: #f4f7fb;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.app-shell {
+    width: min(1180px, 92%);
+    margin: 0 auto;
+    padding: 34px 0 24px;
+}
+
+.hero {
+    background: linear-gradient(135deg, #172554, #2563eb);
+    color: white;
+    padding: 34px;
+    border-radius: 24px;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: flex-start;
+    box-shadow: 0 16px 40px rgba(37, 99, 235, 0.18);
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 700;
+    opacity: 0.8;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(30px, 5vw, 48px);
+}
+
+.subtitle {
+    max-width: 700px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.status {
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.14);
+    white-space: nowrap;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e5eaf2;
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+.extracted-card {
+    grid-column: 1 / -1;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.section-title h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.section-title span {
+    font-size: 11px;
+    font-weight: 800;
+    color: #2563eb;
+    background: #eff6ff;
+    padding: 6px 9px;
+    border-radius: 8px;
+}
+
+.drop-zone {
+    min-height: 190px;
+    border: 2px dashed #b9c5d8;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.drop-zone:hover {
+    border-color: #2563eb;
+    background: #f8fbff;
+}
+
+.drop-zone input {
+    display: none;
+}
+
+.upload-icon {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #eff6ff;
+    color: #2563eb;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.drop-zone span {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.options {
+    display: flex;
+    gap: 12px;
+    align-items: end;
+    margin-top: 16px;
+}
+
+.options label {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+select,
+input {
+    width: 100%;
+    border: 1px solid #d5dce8;
+    border-radius: 10px;
+    padding: 12px;
+    outline: none;
+    font-size: 14px;
+}
+
+input:focus,
+select:focus {
+    border-color: #2563eb;
+}
+
+button {
+    border: 0;
+    border-radius: 10px;
+    padding: 12px 18px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.primary {
+    color: white;
+    background: #2563eb;
+}
+
+.primary:hover {
+    background: #1d4ed8;
+}
+
+.document-info {
+    margin-top: 14px;
+    padding: 12px;
+    background: #f8fafc;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #475569;
+}
+
+.question-row {
+    display: flex;
+    gap: 10px;
+}
+
+.answer {
+    margin-top: 18px;
+    padding: 18px;
+    min-height: 130px;
+    background: #f8fafc;
+    border-radius: 14px;
+    line-height: 1.65;
+    white-space: pre-wrap;
+}
+
+.muted {
+    color: #94a3b8;
+}
+
+.sources {
+    margin-top: 14px;
+}
+
+.source {
+    padding: 12px;
+    border-left: 3px solid #2563eb;
+    background: #f8fafc;
+    margin-top: 8px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+pre {
+    margin: 0;
+    min-height: 230px;
+    max-height: 500px;
+    overflow: auto;
+    padding: 18px;
+    border-radius: 14px;
+    background: #0f172a;
+    color: #dbeafe;
+    line-height: 1.55;
+    white-space: pre-wrap;
+}
+
+footer {
+    text-align: center;
+    color: #64748b;
+    padding: 24px 0 0;
+    font-size: 12px;
+}
+
+@media (max-width: 850px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .extracted-card {
+        grid-column: auto;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 520px) {
+    .options,
+    .question-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}

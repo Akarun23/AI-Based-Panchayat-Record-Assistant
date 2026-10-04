@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panchayat Record Assistant</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="hero">
+            <div>
+                <p class="eyebrow">AI • OCR • RAG</p>
+                <h1>Panchayat Record Assistant</h1>
+                <p class="subtitle">
+                    Digitize scanned Panchayat records and ask questions using
+                    retrieval-augmented document search.
+                </p>
+            </div>
+            <div class="status" id="status">Ready</div>
+        </header>
+
+        <main class="grid">
+            <section class="card upload-card">
+                <div class="section-title">
+                    <h2>1. Upload Record</h2>
+                    <span>OCR</span>
+                </div>
+
+                <label class="drop-zone" id="dropZone">
+                    <input id="fileInput" type="file"
+                           accept=".png,.jpg,.jpeg,.tif,.tiff">
+                    <div class="upload-icon">↑</div>
+                    <strong>Choose a scanned record</strong>
+                    <span>PNG, JPG, JPEG, TIF or TIFF</span>
+                </label>
+
+                <div class="options">
+                    <label>
+                        OCR language
+                        <select id="language">
+                            <option value="eng+tam">English + Tamil</option>
+                            <option value="eng">English</option>
+                            <option value="tam">Tamil</option>
+                        </select>
+                    </label>
+                    <button class="primary" id="uploadBtn">Process Document</button>
+                </div>
+
+                <div class="document-info" id="documentInfo">
+                    No document loaded.
+                </div>
+            </section>
+
+            <section class="card ask-card">
+                <div class="section-title">
+                    <h2>2. Ask the Record</h2>
+                    <span>RAG</span>
+                </div>
+
+                <div class="question-row">
+                    <input id="question"
+                           placeholder="Example: What is the survey number?"
+                           autocomplete="off">
+                    <button class="primary" id="askBtn">Ask</button>
+                </div>
+
+                <div class="answer" id="answer">
+                    <p class="muted">Upload a document and ask a question.</p>
+                </div>
+
+                <div class="sources" id="sources"></div>
+            </section>
+
+            <section class="card extracted-card">
+                <div class="section-title">
+                    <h2>Extracted Text</h2>
+                    <span>OCR OUTPUT</span>
+                </div>
+                <pre id="extractedText">No OCR text available yet.</pre>
+            </section>
+        </main>
+
+        <footer>
+            AI-Based Panchayat Record Assistant • Flask + Tesseract OCR + FAISS RAG
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
